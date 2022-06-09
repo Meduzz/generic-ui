@@ -19,12 +19,12 @@
 		<Rows>
 			<Row>
 				<Panel>
-					<Header title="Spam!" makePageTitle=true />
-					<Input label="Text:" bind:bindValue={value} name="test" type="text" />
-					<Select label="Text too:" bind:bindValue={value} name="select" {items} let:item>
+					<Header title="Spam!" makePageTitle=true class="text-2xl pb-2 underline" />
+					<Input horizontal label="Text:" bind:bindValue={value} name="test" type="text" />
+					<Select horizontal label="Text too:" bind:bindValue={value} name="select" {items} let:item>
 						<option>{item}</option>
 					</Select>
-					<Textarea name="more" label="More text:" bind:bindValue={value} />
+					<Textarea horizontal name="more" label="More text:" bind:bindValue={value} />
 					<Button label="Click" action={buttonHandler} />
 				</Panel>
 			</Row>
