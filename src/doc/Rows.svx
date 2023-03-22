@@ -1,0 +1,41 @@
+---
+title: Generic UI - Rows & Row
+---
+
+<script>
+    import {Rows, Row} from '@chimps/genericui'
+</script>
+
+Rows and Row components are used to divide some space in rows, as rows are added the space needed grows too. While rows grow in y led, they also consume all space in x led. Neither Rows or Row applies any padding or margin but a gap is added between each item.
+
+Ex 2 rows:
+
+```html
+    <Rows>
+        <Row>Im half the space</Row>
+        <Row>Im the other half</Row>
+    </Rows>
+````
+<div class="example">
+    <Rows>
+        <Row>Im half the space</Row>
+        <Row>Im the other half</Row>
+    </Rows>
+</div>
+
+Ex 3 rows:
+
+```html
+    <Rows>
+        <Row>Im one third</Row>
+        <Row>Im one third too</Row>
+        <Row>Im one third also</Row>
+    </Rows>
+````
+<div class="example">
+    <Rows>
+        <Row>Im one third</Row>
+        <Row>Im one third too</Row>
+        <Row>Im one third also</Row>
+    </Rows>
+</div>    

@@ -1,0 +1,17 @@
+---
+title: Generic UI - Text
+---
+
+<script>
+    import {Text} from '@chimps/genericui'
+</script>
+
+Text is a simple span that can be placed where needed. It will not add any padding or margin.
+
+```html
+    <Text text="It's really simple, really!" />
+```
+
+<div class="example">
+    <Text text="It's really simple, really!" />
+</div>

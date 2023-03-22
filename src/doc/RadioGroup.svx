@@ -1,0 +1,45 @@
+---
+title: Generic UI - Radio group
+---
+
+<script>
+    import {RadioGroup} from '@chimps/genericui'
+
+    let items = [
+        {
+            label: 'One',
+            value: 1
+        }, {
+            label: 'Two',
+            value: 2
+        }
+    ]
+
+    let value = 2
+</script>
+
+Radio groups allow you to select one in a group of values. To render the radio group a list of objects with label and value properties are needed. Currently the label encapsulating the radio button is set to blocking.
+
+Ex js:
+```js
+    let items = [
+        {
+            label: 'One',
+            value: 1
+        }, {
+            label: 'Two',
+            value: 2
+        }
+    ]
+
+    let value = 2
+```
+
+Ex html:
+```html
+    <RadioGroup items={items} bind:value={value} />
+```
+
+<div class="example">
+    <RadioGroup items={items} bind:value={value} />
+</div>

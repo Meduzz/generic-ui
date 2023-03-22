@@ -1,8 +1,7 @@
 module.exports = {
   mode: 'jit',
   content: [
-    "./src/**/*.svelte",
-    "./lib/**/*.{svelte,html,css}",
+    "./src/**/*.{svelte, svx}",
   ],
   theme: {
     extend: {},

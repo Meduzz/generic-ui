@@ -1,0 +1,35 @@
+---
+title: Generic UI - buttons
+---
+
+<script>
+    import {Button} from '@chimps/genericui'
+</script>
+
+The sad reality is that the tailwind post-processor does not handle dynamic classes well. There for it's recomended that you define how you want buttons to look outside of the framework and submit those classes in the class attribute to the button when you use it.
+
+Ex css:
+```css
+    .primary {
+        @apply bg-blue-500 text-white
+    }
+
+    .secondary {
+        @apply bg-orange-500 text-white
+    }
+
+    .button {
+        @apply py-1 px-3 rounded-lg
+    }
+```
+
+Ex button:
+```html
+    <Button label="Click" class="button primary" />
+    <Button label="Click" class="button secondary" />
+```
+
+<div class="example">
+    <Button label="Click" class="button primary" />
+    <Button label="Click" class="button secondary" />
+</div>

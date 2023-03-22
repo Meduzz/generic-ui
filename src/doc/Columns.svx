@@ -1,0 +1,41 @@
+---
+title: Generic UI - Columns & Column
+---
+
+<script>
+    import {Columns, Column} from '@chimps/genericui'
+</script>
+
+Columns and Column components are used to divide the available space in columns. Neither Columns or Column applies any padding or margin but a gap is added between each item.
+
+Ex 2 columns:
+
+```html
+    <Columns>
+        <Column>Im half the space</Column>
+        <Column>Im the other half</Column>
+    </Columns>
+````
+<div class="example">
+    <Columns>
+        <Column>Im half the space</Column>
+        <Column>Im the other half</Column>
+    </Columns>
+</div>
+
+Ex 3 columns:
+
+```html
+    <Columns>
+        <Column>Im one third</Column>
+        <Column>Im one third too</Column>
+        <Column>Im one third also</Column>
+    </Columns>
+````
+<div class="example">
+    <Columns>
+        <Column>Im one third</Column>
+        <Column>Im one third too</Column>
+        <Column>Im one third also</Column>
+    </Columns>
+</div>    

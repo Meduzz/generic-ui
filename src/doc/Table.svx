@@ -1,0 +1,73 @@
+---
+title: Generic UI - Tables
+---
+
+<script>
+    import {Table} from '@chimps/genericui'
+
+    let items = [
+        {
+            item:"Butter",
+            quantity: 1
+        },{
+            item: "Cheese",
+            quantity: 2
+        },{
+            item:"Ham",
+            quantity: 1
+        }
+    ]
+</script>
+
+Tables are... tables with a splash of SvelteJS. It does not add any margin or padding, how ever it will take all X led space it is given.
+
+Ex data in js:
+```js
+    let items = [
+        {
+            item:"Butter",
+            quantity: 1
+        },{
+            item: "Cheese",
+            quantity: 2
+        },{
+            item:"Ham",
+            quantity: 1
+        }
+    ]
+```
+
+Ex table:
+```html
+    <Table rows={items}>
+        <tr slot="header">
+            <th>Item</th>
+            <th>Quantity</th>
+        </tr>
+        <tr slot="body" let:item>
+            <td>{item.item}</td>
+            <td>{item.quantity}</td>
+        </tr>
+        <tr slot="footer">
+            <td>-</td>
+            <td>4</td>
+        </tr>
+    </Table>
+```
+
+<div class="example">
+    <Table rows={items}>
+        <tr slot="header">
+            <th>Item</th>
+            <th>Quantity</th>
+        </tr>
+        <tr slot="body" let:item>
+            <td>{item.item}</td>
+            <td>{item.quantity}</td>
+        </tr>
+        <tr slot="footer">
+            <td>-</td>
+            <td>4</td>
+        </tr>
+    </Table>
+</div>

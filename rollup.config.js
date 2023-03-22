@@ -1,10 +1,12 @@
 import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
-import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import postcss from 'rollup-plugin-postcss';
+import livereload from 'rollup-plugin-livereload';
 import css from 'rollup-plugin-css-only';
-import preprocess from 'svelte-preprocess'
+import preprocess from 'svelte-preprocess';
+import { mdsvex } from 'mdsvex';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -29,7 +31,23 @@ function serve() {
 	};
 }
 
-export default {
+export default [{
+	input: "src/index.js",
+	output: {
+	  sourcemap: true,
+	  format: "esm",
+	  file: "dist/ui.es.js",
+	},
+	plugins: [
+		resolve(),
+		commonjs(),
+		svelte({
+		  emitCss: true,
+		}),
+		postcss(),
+		terser()
+	]
+},{
 	input: 'src/main.js',
 	output: {
 		sourcemap: true,
@@ -39,13 +57,18 @@ export default {
 	},
 	plugins: [
 		svelte({
+			extensions: [".svelte", ".svx"],
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
 			},
-			preprocess: preprocess({
+			preprocess: [preprocess({
 				postcss:{}
-			})
+			}),
+			mdsvex({
+				layout: `./src/Layout.svelte`,
+				smartypants: false
+			})]
 		}),
 		// we'll extract any component CSS out into
 		// a separate file - better for performance
@@ -77,4 +100,4 @@ export default {
 	watch: {
 		clearScreen: false
 	}
-};
+}];

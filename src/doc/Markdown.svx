@@ -1,0 +1,50 @@
+---
+title: Generic UI - Markdown
+---
+
+<script>
+    import {Markdown, Columns, Column} from '@chimps/genericui'
+
+    let inMd = `# Hello world\n* **Gief 1**\n* ~~Gief 2~~`
+    let outMd = inMd
+
+    function updated(it) {
+        outMd = it.detail
+    }
+</script>
+
+Markdown component can run in two modes, either as editor or as display. Editor mode is enabled by setting editing to true. Then updates to the markdown will be sent via the updated trigger. Any initial markdown can be sent in markdown property.
+
+In display mode, set editing to false. No updates will be sent in updated trigger. And only markdown submitted in markdown property will be rendered.
+
+Both editor and display will consume all x led space they can get and as much y led space as they need. Which roughly translates into number of lines of markdown.
+
+```js
+let inMd = `# Hello world\n* **Gief 1**\n* ~~Gief 2~~`
+let finalMd = inMd
+
+function updated(it) {
+    finalMd = it.detail
+}
+```
+
+Editor mode:
+```html
+    <Markdown editing={true} markdown={inMd} on:updated={updated} />
+```
+
+Display mode:
+```html
+    <Markdown editing={false} markdown={finalMd} />
+````
+
+<div class="example">
+    <Columns>
+        <Column>
+            <Markdown editing={true} markdown={inMd} on:updated={updated} />
+        </Column>
+        <Column>
+            <Markdown editing={false} markdown={outMd} />
+        </Column>
+    </Columns>
+</div>

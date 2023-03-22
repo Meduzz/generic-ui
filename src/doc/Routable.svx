@@ -1,0 +1,38 @@
+---
+title: Generic UI - Routable
+---
+
+<script>
+    import {ListX, Routable, Panel} from '@chimps/genericui'
+</script>
+
+The routable component allow you to have a section of the page display different content depending on the url. It is a wrapper around a [Tinro Route](https://github.com/AlexxNB/tinro#exact-path).
+
+Ex:
+
+```html
+    <Routable path="/">
+        <Panel>Default page.</Panel>
+    </Routable>
+    <Routable path="/page2">
+        <Panel>Page 2.</Panel>
+    </Routable>
+```
+
+<div class="example">
+    <ListX>
+        <div class="hover:bg-red-300">
+            <a href="/routable">Home</a>
+        </div>
+        <div> | </div>
+        <div class="hover:bg-red-300">
+            <a href="/routable/page2">Page 2</a>
+        </div>
+    </ListX>
+        <Routable path="/">
+        <Panel>Default page.</Panel>
+    </Routable>
+    <Routable path="/page2">
+        <Panel>Page 2.</Panel>
+    </Routable>
+</div>

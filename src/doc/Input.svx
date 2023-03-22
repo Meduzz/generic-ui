@@ -1,0 +1,68 @@
+---
+title: Generic UI - Inputs
+---
+
+<script>
+    import {Input} from '@chimps/genericui'
+</script>
+
+Input component allows for variuos input fields (not checkboxes, radiobuttons, image, month, week and files) to be generated. In case of text input, a class called input is used, which can be overidden to edit the looks of these fields.
+
+Ex input variants:
+```html
+    <Input type="text" value="text" />
+    <Input type="password" value="text" />
+    <Input type="number" value="42" />
+    <Input type="email" value="pii@protect.eu" />
+    <Input type="date" value="1999-12-31" />
+    <Input type="datetime" value="1999-12-31 23:59:59" />
+    <Input type="hidden" value="find me?" />
+    <Input type="url" value="https://github.com" />
+    <Input type="time" value="23:59:59" />
+    <Input type="range" value="50" min="1" max="100" />
+    <Input type="color" value="#c3c3c3" />
+    <Input type="tel" value="+46123456789" />
+    <Input type="search" value="Find stuff" />
+```
+
+<div class="example">
+    <div class="py-1">
+        <Input type="text" value="text" />
+    </div>
+    <div class="py-1">
+        <Input type="password" value="text" />
+    </div>
+    <div class="py-1">
+        <Input type="number" value="42" />
+    </div>
+    <div class="py-1">
+        <Input type="email" value="pii@protect.eu" />
+    </div>
+    <div class="py-1">
+        <Input type="date" value="1999-12-31" />
+    </div>
+    <div class="py-1">
+        <Input type="datetime" value="1999-12-31 23:59:59" />
+    </div>
+    <div class="py-1">
+        <Input type="hidden" value="find me?" />
+    </div>
+    <div class="py-1">
+        <Input type="url" value="https://github.com" />
+    </div>
+    <div class="py-1">
+        <Input type="time" value="23:59:59" />
+    </div>
+    <div class="py-1">
+        <Input type="range" value="50" min="1" max="100" />
+    </div>
+    <div class="py-1">
+        <Input type="color" value="#c3c3c3" />
+    </div>
+    <div class="py-1">
+        <Input type="tel" value="+46123456789" />
+    </div>
+    <div class="py-1">
+        <Input type="search" value="Find stuff" />
+    </div>
+</div>

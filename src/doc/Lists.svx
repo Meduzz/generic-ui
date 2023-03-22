@@ -1,0 +1,45 @@
+---
+title: Generic UI - Lists
+---
+
+<script>
+    import {ListX, ListY} from '@chimps/genericui'
+</script>
+
+ListX and ListY components lets you do pretty lists in X and Y led. They add no padding or margin, but add a divider in their led.
+
+Ex ListX:
+
+```html
+    <ListX>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+    </ListX>
+```
+
+<div class="example">
+    <ListX>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+    </ListX>
+</div>
+
+Ex ListY:
+
+```html
+    <ListY>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+    </ListY>
+```
+
+<div class="example">
+    <ListY>
+        <div>First</div>
+        <div>Second</div>
+        <div>Third</div>
+    </ListY>
+</div>

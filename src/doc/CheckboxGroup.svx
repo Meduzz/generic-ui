@@ -1,0 +1,45 @@
+---
+title: Generic UI - Checkbox group
+---
+
+<script>
+    import {CheckboxGroup} from '@chimps/genericui'
+
+    let items = [
+        {
+            label: 'One',
+            value: 1
+        }, {
+            label: 'Two',
+            value: 2
+        }
+    ]
+
+    let values = [1,2]
+</script>
+
+Checkbox groups allow you to select several in a group of values. To render the checkbox group a list of objects with label and value properties are needed. Currently the label encapsulating the checkbox is set to blocking.
+
+Ex js:
+```js
+    let items = [
+        {
+            label: 'One',
+            value: 1
+        }, {
+            label: 'Two',
+            value: 2
+        }
+    ]
+
+    let values = [1,2]
+```
+
+Ex html:
+```html
+    <CheckboxGroup items={items} bind:values={values} />
+```
+
+<div class="example">
+    <CheckboxGroup items={items} bind:values={values} />
+</div>

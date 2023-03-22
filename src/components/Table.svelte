@@ -1,11 +1,10 @@
 <script>
     export let rows
-    export let tableClass = "table-auto w-full"
 </script>
 
-<table class={tableClass} {...$$restProps}>
+<table class="table-auto w-full" {...$$restProps}>
     <thead>
-        <slot name="head"></slot>
+        <slot name="header"></slot>
     </thead>
     <tbody>
     {#each rows as item}
