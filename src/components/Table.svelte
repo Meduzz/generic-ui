@@ -1,8 +1,14 @@
 <script>
+    import { twMerge } from 'tailwind-merge'
+    import {classHelper} from '../helper'
+
     export let rows
+
+    let defaultClass = ''
+    let {classes, otherProps} = classHelper($$restProps)
 </script>
 
-<table class="table-auto w-full" {...$$restProps}>
+<table class={twMerge(defaultClass, classes)} {...otherProps}>
     <thead>
         <slot name="header"></slot>
     </thead>

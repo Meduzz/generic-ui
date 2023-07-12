@@ -5,7 +5,7 @@
 </script>
 
 <div>
-    <select name={name} bind:value={value} class="input" {...$$restProps}>
+    <select {name} bind:value={value} {...$$restProps}>
         {#each items as item}
             <slot {item}></slot>
         {/each}

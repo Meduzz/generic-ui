@@ -1,148 +1,147 @@
 <script>
 	import {ListY, Container, Columns, Column, Rows, Row, Routable, Panel} from './layout'
-	import Start from './doc/Start.svx'
-	import ColumnsDoc from './doc/Columns.svx'
-	import RowsDoc from './doc/Rows.svx'
-	import PanelDoc from './doc/Panel.svx'
-	import RoutableDoc from './doc/Routable.svx'
-	import Lists from './doc/Lists.svx'
-	import Buttons from './doc/Buttons.svx'
-	import HeaderDoc from './doc/Header.svx'
-	import Tables from './doc/Table.svx'
-	import TextDoc from './doc/Text.svx'
-	import Markdown from './doc/Markdown.svx'
-	import InputDoc from './doc/Input.svx'
-	import Select from './doc/Select.svx'
-	import Textarea from './doc/Textarea.svx'
-	import RadioGroup from './doc/RadioGroup.svx'
-	import CheckboxGroup from './doc/CheckboxGroup.svx'
-	import SubHeader from './doc/SubHeader.svx'
+	import Start from './doc/Start.svelte'
+	import ColumnsDoc from './doc/Columns.svelte'
+	import RowsDoc from './doc/Rows.svelte'
+	import PanelDoc from './doc/Panel.svelte'
+	import RoutableDoc from './doc/Routable.svelte'
+	import Lists from './doc/Lists.svelte'
+	import Buttons from './doc/Buttons.svelte'
+	import HeaderDoc from './doc/Header.svelte'
+	import Tables from './doc/Table.svelte'
+	import TextDoc from './doc/Text.svelte'
+	import Markdown from './doc/Markdown.svelte'
+	import SubHeader from './doc/SubHeader.svelte'
+	import InputDoc from './doc/Input.svelte'
+	import Select from './doc/Select.svelte'
+	import Textarea from './doc/Textarea.svelte'
+	import RadioGroup from './doc/RadioGroup.svelte'
+	import CheckboxGroup from './doc/CheckboxGroup.svelte'
+	import Sidebar from './doc/Sidebar.svelte'
+	import Toasts from './doc/Toasts.svelte'
+
+	let groups = [
+		{
+			name: 'Layout',
+			components: [
+				{
+					label: 'Columns & Column',
+					href: '/columns',
+					component: ColumnsDoc
+				}, {
+					label: 'Rows & Row',
+					href: '/rows',
+					component: RowsDoc
+				}, {
+					label: 'Panel',
+					href: '/panels',
+					component: PanelDoc
+				}, {
+					label: 'Routable',
+					href: '/routable/*',
+					component: RoutableDoc
+				}, {
+					label: 'ListX & ListY',
+					href: '/lists',
+					component: Lists
+				}
+			]
+		},{
+			name: 'Components',
+			components: [
+				{
+					label: 'Button',
+					href: '/buttons',
+					component: Buttons
+				}, {
+					label: 'Header',
+					href: '/header',
+					component: HeaderDoc
+				}, {
+					label: 'Sub header',
+					href: '/subheader',
+					component: SubHeader
+				}, {
+					label: 'Table',
+					href: '/tables',
+					component: Tables
+				}, {
+					label: 'Text',
+					href: '/text',
+					component: TextDoc
+				}, {
+					label: 'Markdown',
+					href: '/markdown',
+					component: Markdown
+				},{
+					label: 'Sidebar',
+					href: '/sidebar',
+					component: Sidebar
+				},{
+					label: 'Toasts',
+					href: '/toasts',
+					component: Toasts
+				}
+			]
+		},{
+			name: 'Forms',
+			components: [
+				{
+					label: 'Input',
+					href: '/inputs',
+					component: InputDoc
+				},{
+					label: 'Select',
+					href: '/select',
+					component: Select
+				},{
+					label: 'Textarea',
+					href: '/textarea',
+					component: Textarea
+				},{
+					label: 'Radio group',
+					href: '/radiogroup',
+					component: RadioGroup
+				},{
+					label: 'Checkbox group',
+					href: '/checkboxgroup',
+					component: CheckboxGroup
+				}
+			]
+		}
+	]
 </script>
 
 <Container center={false}>
 	<Columns>
-		<Column class="flex-shrink-0">
+		<Column class="basis-1/4">
 			<Panel>
 				<Rows>
-					<Row>
-						<span class="underline">Layout</span>
-						<ListY>
-							<div>
-								<a href="/columns">Columns & Column</a>
-							</div>
-							<div>
-								<a href="/rows">Rows & Row</a>
-							</div>
-							<div>
-								<a href="/panels">Panel</a>
-							</div>
-							<div>
-								<a href="/routable">Routable</a>
-							</div>
-							<div>
-								<a href="/lists">ListX & ListY</a>
-							</div>
-						</ListY>
-					</Row>
-					<Row>
-						<span class="underline">Components</span>
-						<ListY>
-							<div>
-								<a href="/buttons">Button</a>
-							</div>
-							<div>
-								<a href="/header">Header</a>
-							</div>
-							<div>
-								<a href="/subheader">Sub header</a>
-							</div>
-							<div>
-								<a href="/tables">Table</a>
-							</div>
-							<div>
-								<a href="/text">Text</a>
-							</div>
-							<div>
-								<a href="/markdown">Markdown</a>
-							</div>
-						</ListY>
-					</Row>
-					<Row>
-						<span class="underline">Forms</span>
-						<ListY>
-							<div>
-								<a href="/inputs">Input</a>
-							</div>
-							<div>
-								<a href="/select">Select</a>
-							</div>
-							<div>
-								<a href="/textarea">Textarea</a>
-							</div>
-							<div>
-								<a href="/radiogroup">Radio group</a>
-							</div>
-							<div>
-								<a href="/checkboxgroup">Checkbox group</a>
-							</div>
-						</ListY>
-					</Row>
+					{#each groups as group}
+						<Row>
+							<span class="underline">{group.name}</span>
+							<ListY items={group.components} let:item>
+								<div>
+									<a href="{item.href}">{item.label}</a>
+								</div>
+							</ListY>
+						</Row>
+					{/each}
 				</Rows>
 			</Panel>
 		</Column>
-		<Column>
+		<Column class="basis-3/4">
 			<Panel>
-				<Routable path="/">
+				<Routable>
 					<Start />
 				</Routable>
-				<Routable path="/columns">
-					<ColumnsDoc />
-				</Routable>
-				<Routable path="/rows">
-					<RowsDoc />
-				</Routable>
-				<Routable path="/panels">
-					<PanelDoc />
-				</Routable>
-				<Routable path="/routable/*">
-					<RoutableDoc />
-				</Routable>
-				<Routable path="/lists">
-					<Lists />
-				</Routable>
-				<Routable path="/buttons">
-					<Buttons />
-				</Routable>
-				<Routable path="/header">
-					<HeaderDoc />
-				</Routable>
-				<Routable path="/subheader">
-					<SubHeader />
-				</Routable>
-				<Routable path="/tables">
-					<Tables />
-				</Routable>
-				<Routable path="/text">
-					<TextDoc />
-				</Routable>
-				<Routable path="/markdown">
-					<Markdown />
-				</Routable>
-				<Routable path="/inputs">
-					<InputDoc />
-				</Routable>
-				<Routable path="/select">
-					<Select />
-				</Routable>
-				<Routable path="/textarea">
-					<Textarea />
-				</Routable>
-				<Routable path="/radiogroup">
-					<RadioGroup />
-				</Routable>
-				<Routable path="/checkboxgroup">
-					<CheckboxGroup />
-				</Routable>
+				{#each groups as group}
+					{#each group.components as c}
+						<Routable path={c.href}>
+							<svelte:component this={c.component}></svelte:component>
+						</Routable>
+					{/each}
+				{/each}
 			</Panel>
 		</Column>
 	</Columns>
@@ -152,20 +151,4 @@
 	@tailwind base;
 	@tailwind components;
 	@tailwind utilities;
-
-	.primary {
-		@apply bg-blue-500 text-white
-	}
-
-	.secondary {
-		@apply bg-orange-500 text-white
-	}
-
-	.button {
-		@apply py-1 px-3 rounded-lg
-	}
-
-	.input {
-		@apply p-1 pl-2 border rounded-lg
-	}
 </style>

@@ -2,4 +2,4 @@
     export let text
 </script>
 
-<div>{text}</div>
+<div {...$$restProps}>{text}</div>

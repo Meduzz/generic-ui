@@ -13,9 +13,8 @@
 
     export let markdown
     export let editing = false
-    let text = htmlify(markdown)
 
-    console.log(markdown, text)
+    let text = htmlify(markdown)
 
     function render(md) {
         return micromark(md, {
@@ -41,7 +40,7 @@
     }
 </script>
 
-<div>
+<div {...$$restProps}>
     {#if editing}
     <p contenteditable="true" bind:innerHTML={text} on:keyup={updated}></p>
     {:else}

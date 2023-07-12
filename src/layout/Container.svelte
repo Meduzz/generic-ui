@@ -1,7 +1,11 @@
 <script>
-    export let center = false
+    import {twMerge} from 'tailwind-merge'
+    import {classHelper} from '../helper'
+
+    let defaultClass = 'p-2 container mx-auto'
+    let {classes, otherProps} = classHelper($$restProps || {class:''})
 </script>
 
-<div class="p-2 container {center ? ' mx-auto':''}">
-    <slot></slot>
+<div class={twMerge(defaultClass, classes)}>
+    <slot {...otherProps}></slot>
 </div>

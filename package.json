@@ -1,6 +1,6 @@
 {
   "name": "@chimps/genericui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a few very generic ui components in/for svelte with tailwind",
   "repository": {
     "type": "git",
@@ -39,14 +39,14 @@
     "svelte": "^3.48.0",
     "svelte-loader": "^3.1.2",
     "svelte-preprocess": "4.10.6",
-    "mdsvex": "^0.10.6",
     "tailwindcss": "3.0.24"
   },
   "dependencies": {
     "sirv-cli": "^2.0.0",
     "tinro": "^0.6.12",
     "micromark": "^3.1.0",
-    "micromark-extension-gfm": "^2.0.1"
+    "micromark-extension-gfm": "^2.0.1",
+    "tailwind-merge": "^1.13.2"
   },
   "files": [
     "src",

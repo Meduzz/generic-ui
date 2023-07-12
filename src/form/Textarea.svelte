@@ -4,7 +4,7 @@
 </script>
 
 <div>
-    <textarea {name} bind:value={value} class="input" {...$$restProps}></textarea>
+    <textarea {name} bind:value={value} {...$$restProps}></textarea>
 </div>
 
 <style>

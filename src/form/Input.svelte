@@ -1,40 +1,46 @@
 <script>
+    import {twMerge} from 'tailwind-merge'
+    import {classHelper} from '../helper'
+
     export let name
     export let value
     export let type
     export let min
     export let max
+
+    let defaultClass = 'align-middle'
+    let {classes, otherProps} = classHelper($$restProps)
 </script>
 
 <div>
     {#if type == 'text'}
-    <input type="text" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="text" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'password'}
-    <input type="password" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="password" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'number'}
-    <input type="number" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="number" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'email'}
-    <input type="email" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="email" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'date'}
-    <input type="date" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="date" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'datetime'}
-    <input type="datetime-local" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="datetime-local" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'hidden'}
-    <input type="hidden" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="hidden" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'url'}
-    <input type="url" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="url" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'time'}
-    <input type="time" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="time" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'range'}
-    <input type="range" name={name} bind:value={value} class="align-middle" min={min} max={max} {...$$restProps} />
+    <input type="range" name={name} bind:value={value} min={min} max={max} class={twMerge(defaultClass, classes)} {...otherProps} />
     <span>{value}</span>
     {:else if type == 'color'}
-    <input type="color" name={name} bind:value={value} {...$$restProps} />
+    <input type="color" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'tel'}
-    <input type="tel" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="tel" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else if type == 'search'}
-    <input type="search" name={name} bind:value={value} class="input" {...$$restProps} />
+    <input type="search" name={name} bind:value={value} class={classes} {...otherProps} />
     {:else}
-    <span {...$$restProps}>{value}</span>
+    <span class={classes} {...otherProps}>{value}</span>
     {/if}
 </div>

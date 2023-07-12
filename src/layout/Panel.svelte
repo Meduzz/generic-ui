@@ -1,9 +1,11 @@
 <script>
-    export let border = true
-    export let shadow = false
-    export let padding = true
+    import {twMerge} from 'tailwind-merge'
+    import {classHelper} from '../helper'
+
+    let defaultClass = 'border border-slate-400 border-solid shadow-lg p-2'
+    let {classes, otherProps} = classHelper($$restProps)
 </script>
 
-<div class="border-solid border-slate-400{border ? ' border':''}{shadow ? ' shadow-lg':''}{padding ? ' p-2':''}" {...$$restProps}>
-    <slot></slot>
+<div class={twMerge(defaultClass, classes)}>
+    <slot {...otherProps}></slot>
 </div>

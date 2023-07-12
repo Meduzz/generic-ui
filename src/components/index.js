@@ -4,6 +4,8 @@ import Table from './Table.svelte'
 import Text from './Text.svelte'
 import Markdown from './Markdown.svelte'
 import SubHeader from './SubHeader.svelte'
+import Sidebar from './Sidebar.svelte'
+import {default as ToastLane, addToast, removeToast} from './ToastLane.svelte'
 
 export {
     Header,
@@ -11,5 +13,9 @@ export {
     Table,
     Text,
     Markdown,
-    SubHeader
+    SubHeader,
+    Sidebar,
+    ToastLane,
+    addToast,
+    removeToast
 }

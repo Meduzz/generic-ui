@@ -1,11 +1,11 @@
-<div {...$$restProps}>
-    <slot></slot>
-</div>
+<script>
+    import {twMerge} from 'tailwind-merge'
+    import {classHelper} from '../helper'
 
-<style>
-    div {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-</style>
+    let defaultClass = 'flex flex-col gap-2'
+    let {classes, otherProps} = classHelper($$restProps)
+</script>
+
+<div class={twMerge(defaultClass, classes)}>
+    <slot {...otherProps}></slot>
+</div>

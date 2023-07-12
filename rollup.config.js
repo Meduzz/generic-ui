@@ -6,7 +6,6 @@ import postcss from 'rollup-plugin-postcss';
 import livereload from 'rollup-plugin-livereload';
 import css from 'rollup-plugin-css-only';
 import preprocess from 'svelte-preprocess';
-import { mdsvex } from 'mdsvex';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -57,17 +56,13 @@ export default [{
 	},
 	plugins: [
 		svelte({
-			extensions: [".svelte", ".svx"],
+			extensions: [".svelte"],
 			compilerOptions: {
 				// enable run-time checks when not in production
 				dev: !production
 			},
 			preprocess: [preprocess({
 				postcss:{}
-			}),
-			mdsvex({
-				layout: `./src/Layout.svelte`,
-				smartypants: false
 			})]
 		}),
 		// we'll extract any component CSS out into
