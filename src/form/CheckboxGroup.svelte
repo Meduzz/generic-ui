@@ -3,6 +3,7 @@
 
     export let items = []
     export let values = []
+    export let name
 
     let {classes, otherProps} = classHelper($$restProps)
 </script>
@@ -10,7 +11,7 @@
 <div>
     {#each items as item}
         <label class={classes}>
-            <input type="checkbox" value={item.value} bind:group={values} {...otherProps} />
+            <input type="checkbox" {name} value={item.value} bind:group={values} {...otherProps} />
             {item.label}
         </label>
     {/each}

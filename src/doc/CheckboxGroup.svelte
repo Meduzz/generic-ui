@@ -26,7 +26,7 @@
         ]
 
         let values = [1,2]`
-    let html = `        <CheckboxGroup items={items} bind:values={values} />`
+    let html = `        <CheckboxGroup items={items} bind:values={values} name="checkboxez" />`
 </script>
 
 <Layout title="Generic UI - Checkbox group">
@@ -41,6 +41,6 @@
     </Code>
 
     <Example>
-        <CheckboxGroup items={items} bind:values={values} />
+        <CheckboxGroup items={items} bind:values={values} name="checkboxez" />
     </Example>
 </Layout>

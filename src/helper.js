@@ -3,6 +3,7 @@ export const classHelper = (restProps) => {
         .filter(it => it != 'class')
         .reduce((agg, key) => {
             agg[key] = restProps[key]
+            return agg
         }, {})
     let classes = restProps['class']
 

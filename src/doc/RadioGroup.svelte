@@ -26,7 +26,7 @@
         ]
 
         let value = 2`
-    let html = `        <RadioGroup items={items} bind:value={value} />`
+    let html = `        <RadioGroup items={items} bind:value={value} name="radioz" />`
 </script>
 
 <Layout title="Generic UI - Radio group">
@@ -41,6 +41,6 @@
     </Code>
 
     <Example>
-        <RadioGroup items={items} bind:value={value} />
+        <RadioGroup items={items} bind:value={value} name="radioz" />
     </Example>
 </Layout>

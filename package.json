@@ -1,6 +1,6 @@
 {
   "name": "@chimps/genericui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a few very generic ui components in/for svelte with tailwind",
   "repository": {
     "type": "git",

@@ -3,6 +3,7 @@
 
     export let items = []
     export let value
+    export let name
 
     let {classes, otherProps} = classHelper($$restProps)
 </script>
@@ -10,7 +11,7 @@
 <div>
     {#each items as item}
         <label class={classes}>
-            <input type="radio" value={item.value} bind:group={value} {...otherProps} />
+            <input type="radio" {name} value={item.value} bind:group={value} {...otherProps} />
             {item.label}
         </label>
     {/each}
