@@ -8,7 +8,7 @@
 
 <main>
     <h1 class="text-xl font-bold underline">{title}</h1>
-    <div class="markdown">
+    <div>
         <slot></slot>
     </div>
 </main>

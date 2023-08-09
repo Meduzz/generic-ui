@@ -5,6 +5,7 @@ import Text from './Text.svelte'
 import Markdown from './Markdown.svelte'
 import SubHeader from './SubHeader.svelte'
 import Sidebar from './Sidebar.svelte'
+import Navbar from './Navbar.svelte'
 import {default as ToastLane, addToast, removeToast} from './ToastLane.svelte'
 
 export {
@@ -17,5 +18,6 @@ export {
     Sidebar,
     ToastLane,
     addToast,
-    removeToast
+    removeToast,
+    Navbar
 }

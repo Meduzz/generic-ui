@@ -1,5 +1,6 @@
 <script>
 	import {ListY, Container, Columns, Column, Rows, Row, Routable, Panel} from './layout'
+	import {Sidebar, Navbar} from './components'
 	import Start from './doc/Start.svelte'
 	import ColumnsDoc from './doc/Columns.svelte'
 	import RowsDoc from './doc/Rows.svelte'
@@ -17,8 +18,9 @@
 	import Textarea from './doc/Textarea.svelte'
 	import RadioGroup from './doc/RadioGroup.svelte'
 	import CheckboxGroup from './doc/CheckboxGroup.svelte'
-	import Sidebar from './doc/Sidebar.svelte'
+	import SidebarDoc from './doc/Sidebar.svelte'
 	import Toasts from './doc/Toasts.svelte'
+	import Labels from './doc/Label.svelte'
 
 	let groups = [
 		{
@@ -76,7 +78,7 @@
 				},{
 					label: 'Sidebar',
 					href: '/sidebar',
-					component: Sidebar
+					component: SidebarDoc
 				},{
 					label: 'Toasts',
 					href: '/toasts',
@@ -106,31 +108,52 @@
 					label: 'Checkbox group',
 					href: '/checkboxgroup',
 					component: CheckboxGroup
+				},{
+					label: 'Labels',
+					href: '/labels',
+					component: Labels
 				}
 			]
 		}
 	]
+
+	let menuItems = [
+		{
+			label: 'Home',
+			href: '/'
+		}, {
+			label: 'Github',
+			href: 'https://github.com/Meduzz/generic-ui'
+		}
+	]
+
+	let sideBarShown = window.outerWidth < 640 ? false : true
+
+	function toggleSideBar() {
+		sideBarShown = !sideBarShown
+	}
 </script>
 
-<Container center={false}>
+<Container class="sm:mx-auto">
+	<Navbar brand="Generic UI" items={menuItems} on:toggle={toggleSideBar} />
 	<Columns>
-		<Column class="basis-1/4">
-			<Panel>
-				<Rows>
-					{#each groups as group}
-						<Row>
-							<span class="underline">{group.name}</span>
-							<ListY items={group.components} let:item>
-								<div>
-									<a href="{item.href}">{item.label}</a>
-								</div>
-							</ListY>
-						</Row>
-					{/each}
-				</Rows>
-			</Panel>
+		<Column class="sm:basis-1/5">
+			{#if sideBarShown}
+			<Sidebar class="fixed top-25 w-full h-full overflow-scroll sm:block sm:static sm:w-auto">
+				{#each groups as group}
+					<div class="py-1">
+						<span class="underline">{group.name}</span>
+						<ListY items={group.components} let:item>
+							<div>
+								<a href="{item.href}">{item.label}</a>
+							</div>
+						</ListY>
+					</div>
+				{/each}
+			</Sidebar>
+			{/if}
 		</Column>
-		<Column class="basis-3/4">
+		<Column class="basis-full sm:basis-4/5 pt-2">
 			<Panel>
 				<Routable>
 					<Start />

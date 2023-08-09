@@ -2,7 +2,7 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    let defaultClass = 'p-2 container mx-auto'
+    let defaultClass = 'container'
     let {classes, otherProps} = classHelper($$restProps || {class:''})
 </script>
 

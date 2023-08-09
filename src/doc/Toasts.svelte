@@ -1,11 +1,12 @@
 <script>
+    import { fade } from 'svelte/transition'
     import { ToastLane, addToast, removeToast } from '../components'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'
 
     let html = `        <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md">
+            <div class="p-2 border bg-white rounded-md" transition:fade={{delay: 300, duration: 300}}>
                 <span>{toast.label}</span>
                 <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
             </div>
@@ -42,7 +43,7 @@
 
     <Example>
         <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md">
+            <div class="p-2 border bg-white rounded-md" transition:fade={{delay: 300, duration: 300}}>
                 <span>{toast.label}</span>
                 <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
             </div>

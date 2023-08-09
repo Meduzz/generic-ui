@@ -2,7 +2,7 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    let defaultClass = 'fixed top-0 left-0 h-screen w-48 p-4 z-1 bg-slate-200'
+    let defaultClass = 'bg-slate-300 p-2'
     let {classes, otherProps} = classHelper($$restProps || {class:''})
 </script>
 
