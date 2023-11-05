@@ -10,7 +10,7 @@
     let {classes, otherProps} = classHelper($$restProps)
 </script>
 
-<select {name} bind:value={value} {...otherProps} class={twMerge(defaultClass, classes)}>
+<select {name} bind:value={value} on:change {...otherProps} class={twMerge(defaultClass, classes)}>
     {#each items as item}
         <slot {item}></slot>
     {/each}

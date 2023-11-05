@@ -19,6 +19,10 @@
     let html = `        <Select items={items} value={value} name="dropdown" let:item>
             <option>{item.value}</option>
         </Select>`
+
+    function logChange() {
+        console.log("I changed")
+    }
 </script>
 
 <Layout title="Generic UI - Select">
@@ -33,7 +37,7 @@
     </Code>
 
     <Example>
-        <Select items={items} value={value} name="dropdown" class="p-2 caret-orange-500" let:item>
+        <Select on:change={logChange} items={items} value={value} name="dropdown" class="p-2 caret-orange-500" let:item>
             <option>{item.value}</option>
         </Select>
     </Example>

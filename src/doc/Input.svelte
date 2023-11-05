@@ -17,6 +17,14 @@
         <Input type="color" value="#c3c3c3" class="py-1" />
         <Input type="tel" value="+46123456789" class="py-1" />
         <Input type="search" value="Find stuff" class="py-1" />`
+
+        function onFocus() {
+            console.log("Im feeling focused")
+        }
+
+        function onBlur() {
+            console.log("Im feeling blury")
+        }
 </script>
 
 <Layout title="Generic UI - Inputs">
@@ -27,7 +35,7 @@
     </Code>
 
     <Example>
-        <Input type="text" value="text" class="py-1" />
+        <Input type="text" value="text" class="py-1" on:focus={onFocus} on:blur={onBlur} />
         <Input type="password" value="text" class="py-1" />
         <Input type="number" value="42" class="py-1" />
         <Input type="email" value="pii@protect.eu" class="py-1" />

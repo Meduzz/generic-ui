@@ -7,6 +7,14 @@
     let theValue = 'Some long text!'
     let js = `        let theValue = 'Some long text!'`
     let html = `        <Textarea name="text" value={theValue} />`
+
+    function onFocus() {
+        console.log("Im feeling focused!")
+    }
+
+    function onBlur() {
+        console.log("Im feeling blury!")
+    }
 </script>
 
 <Layout title="Generic UI - Textarea">
@@ -21,6 +29,6 @@
     </Code>
 
     <Example>
-        <Textarea name="text" value={theValue} />
+        <Textarea name="text" value={theValue} on:focus={onFocus} on:blur={onBlur} />
     </Example>
 </Layout>

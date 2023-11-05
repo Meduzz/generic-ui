@@ -9,4 +9,4 @@
     let {classes, otherProps} = classHelper($$restProps)
 </script>
 
-<textarea {name} bind:value={value} {...otherProps} class={twMerge(defaultClass, classes)}></textarea>
+<textarea {name} bind:value={value} on:focus on:blur {...otherProps} class={twMerge(defaultClass, classes)}></textarea>
