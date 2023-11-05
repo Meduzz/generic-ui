@@ -16,7 +16,7 @@ export {default as Table} from './components/Table.svelte'
 export {default as Text} from './components/Text.svelte'
 export {default as Markdown} from './components/Markdown.svelte'
 export {default as SubHeader} from './components/SubHeader.svelte'
-export {default as ToastLand, addToast, removeToast} from './components/ToastLane.svelte'
+export {default as ToastLane, addToast, removeToast} from './components/ToastLane.svelte'
 export {default as Sidebar} from './components/Sidebar.svelte'
 export {default as Navbar} from './components/Navbar.svelte'
 
