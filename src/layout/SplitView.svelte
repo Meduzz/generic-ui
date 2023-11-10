@@ -23,6 +23,7 @@
         <Panel>
             <ListView {loader} let:item>
                 <slot name="listview" {item}></slot>
+                <slot name="loading" slot="loading"></slot>
             </ListView>
         </Panel>
     </Row>
@@ -32,4 +33,3 @@
         </Panel>
     </Row>
 </Rows>
-

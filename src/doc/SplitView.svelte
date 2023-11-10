@@ -5,6 +5,9 @@
     import {default as SplitView, select} from '../layout/SplitView.svelte'
 
     let html = `        <SplitView loader={loadPage} let:item let:detail>
+            <svelte:fragment slot="loading">
+                <p>Asdf...</p>
+            </svelte:fragment>
             <svelte:fragment slot="listview">
                 <div>
                     <button on:click={() => select(item)}>{item.label}</button>
@@ -43,7 +46,9 @@
                 })
             }
 
-            resolve(items)
+            setTimeout(() => {
+                resolve(items)
+            }, 1000)
         })
     }
 </script>
@@ -58,6 +63,9 @@
     </Code>
     <Example>
         <SplitView loader={loadPage} let:item let:detail>
+            <svelte:fragment slot="loading">
+                <p>Asdf...</p>
+            </svelte:fragment>
             <svelte:fragment slot="listview">
                 <div>
                     <button on:click={() => select(item)}>{item.label}</button>
