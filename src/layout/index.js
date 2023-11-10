@@ -7,6 +7,7 @@ import Routable from './Routable.svelte'
 import Container from './Container.svelte'
 import ListY from './ListY.svelte'
 import ListX from './ListX.svelte'
+import ListView from './ListView.svelte'
 
 export {
     Panel,
@@ -17,5 +18,6 @@ export {
     Routable,
     Container,
     ListY,
-    ListX
+    ListX,
+    ListView
 }
