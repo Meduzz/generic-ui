@@ -1,0 +1,53 @@
+<script>
+    import Layout from './Layout.svelte'
+    import Code from './Code.svelte'
+    import Example from './Example.svelte'
+    import ListView from '../layout/ListView.svelte'
+
+    let html =  `        <ListView loader={loadPage} let:item>
+            <div>{item.label}</div>
+        </ListView>`
+    let js = `    function loadPage(skip, take) {
+        return new Promise((resolve) => {
+            let items = []
+            for (let i = 1; i < 101; i++) {
+                count++
+                items = items.concat({
+                    label: \`Item \${count}\`
+                })
+            }
+
+            resolve(items)
+        })
+    }`
+    let count = 0
+
+    function loadPage(skip, take) {
+        return new Promise((resolve) => {
+            let items = []
+            for (let i = 1; i < 101; i++) {
+                count++
+                items = items.concat({
+                    label: `Item ${count}`
+                })
+            }
+
+            resolve(items)
+        })
+    }
+</script>
+
+<Layout title="List view">
+    <p>ListView when fed with a loader function, takes care of the pagination and let you focus on how to render the list.</p>
+    <Code language="html">
+        <pre>{html}</pre>
+    </Code>
+    <Code>
+        <pre>{js}</pre>
+    </Code>
+    <Example>
+        <ListView loader={loadPage} let:item>
+            <div>{item.label}</div>
+        </ListView>
+    </Example>
+</Layout>
