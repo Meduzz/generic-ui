@@ -65,7 +65,7 @@
 
 <div>
     {#await loading}
-        <p>Loading...</p>
+        <slot name="loading"><p>Loading...</p></slot>
     {:then}
     {#each subList() as item}
         <slot {item}></slot>

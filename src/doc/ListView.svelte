@@ -6,6 +6,9 @@
 
     let html =  `        <ListView loader={loadPage} let:item>
             <div>{item.label}</div>
+            <svelte:fragment slot="loading">
+                <p>Going bananas!!</p>
+            </svelte:fragment>
         </ListView>`
     let js = `    function loadPage(skip, take) {
         return new Promise((resolve) => {
@@ -17,7 +20,9 @@
                 })
             }
 
-            resolve(items)
+            setTimeout(() => {
+                resolve(items)
+            }, 1000)
         })
     }`
     let count = 0
@@ -32,7 +37,9 @@
                 })
             }
 
-            resolve(items)
+            setTimeout(() => {
+                resolve(items)
+            }, 1000)
         })
     }
 </script>
