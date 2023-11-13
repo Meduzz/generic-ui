@@ -18,6 +18,9 @@
                 <div>Details for {detail.label}</div>
                 {/if}
             </svelte:fragment>
+            <svelte:fragment slot="actions">
+                <a href="/splitview?hello">Hello</a>
+            </svelte:fragment>
         </SplitView>`
     let js = `    let count = 0
 
@@ -75,6 +78,9 @@
                 {#if detail}
                 <div>Details for {detail.label}</div>
                 {/if}
+            </svelte:fragment>
+            <svelte:fragment slot="actions">
+                <a href="/splitview?hello">Hello</a>
             </svelte:fragment>
         </SplitView>
     </Example>

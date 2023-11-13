@@ -77,5 +77,6 @@
         <button type="button" on:click={start}>|&lt;</button>
         <button type="button" on:click={prev}>&lt;</button>
         <button type="button" on:click={next}>&gt;</button>
+        <slot name="actions"></slot>
     </div>
 </div>

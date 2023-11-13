@@ -24,6 +24,7 @@
             <ListView {loader} let:item>
                 <slot name="listview" {item}></slot>
                 <slot name="loading" slot="loading"></slot>
+                <slot name="actions" slot="actions"></slot>
             </ListView>
         </Panel>
     </Row>

@@ -55,6 +55,9 @@
     <Example>
         <ListView loader={loadPage} let:item>
             <div>{item.label}</div>
+            <svelte:fragment slot="actions">
+                <a href="/listview?hello">Hello</a>
+            </svelte:fragment>
         </ListView>
     </Example>
 </Layout>
