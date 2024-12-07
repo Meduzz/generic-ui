@@ -2,22 +2,37 @@
     import { twMerge } from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    export let rows
+    /**
+     * @typedef {Object} Props
+     * @property {any[]} rows
+     * @property {Snippet} header
+     * @property {Snippet<any>} body
+     * @property {Snippet} footer
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let {
+        rows,
+        header,
+        body,
+        footer,
+        ...rest
+    } = $props();
 
     let defaultClass = ''
-    let {classes, otherProps} = classHelper($$restProps)
+    let {classes, otherProps} = classHelper(rest)
 </script>
 
 <table class={twMerge(defaultClass, classes)} {...otherProps}>
     <thead>
-        <slot name="header"></slot>
+        {@render header()}
     </thead>
     <tbody>
     {#each rows as item}
-        <slot name="body" {item}></slot>
+        {@render body(item)}
     {/each}
     </tbody>
     <tfoot>
-        <slot name="footer"></slot>
+        {@render footer()}
     </tfoot>
 </table>

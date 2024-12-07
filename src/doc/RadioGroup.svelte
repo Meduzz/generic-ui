@@ -13,7 +13,7 @@
             value: 2
         }
     ]
-    let value = 2
+    let value = $state(2)
 
     let js = `        let items = [
             {

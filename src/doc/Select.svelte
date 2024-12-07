@@ -37,8 +37,10 @@
     </Code>
 
     <Example>
-        <Select on:change={logChange} items={items} value={value} name="dropdown" class="p-2 caret-orange-500" let:item>
-            <option>{item.value}</option>
+        <Select on:change={logChange} items={items} value={value} name="dropdown" class="p-2 caret-orange-500" >
+            {#snippet children({ item })}
+                <option>{item.value}</option>
+            {/snippet}
         </Select>
     </Example>
 </Layout>

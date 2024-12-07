@@ -2,10 +2,16 @@
     import { twMerge } from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    export let title
+    /**
+     * @typedef {Object} Props
+     * @property {string} title
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { title, ...rest } = $props();
 
     let defaultClass = 'text-xl'
-    let {classes, otherProps} = classHelper($$restProps)
+    let {classes, otherProps} = classHelper(rest)
 </script>
 
 <h3 class={twMerge(defaultClass, classes)} {...otherProps}>{title}</h3>

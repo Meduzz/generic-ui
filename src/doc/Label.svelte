@@ -58,8 +58,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Horizontal>
             <Horizontal label="Horizontal select:">
-                <Select items={items} let:item>
-                    <option value={item.value}>{item.label}</option>
+                <Select items={items}>
+                    {#snippet children({ item })}
+                        <option value={item.value}>{item.label}</option>
+                    {/snippet}
                 </Select>
             </Horizontal>
             <Horizontal label="Horizontal textarea:">
@@ -80,8 +82,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Vertical>
             <Vertical label="Vertical select:">
-                <Select items={items} let:item>
-                    <option value={item.value}>{item.label}</option>
+                <Select items={items} >
+                    {#snippet children({ item })}
+                        <option value={item.value}>{item.label}</option>
+                    {/snippet}
                 </Select>
             </Vertical>
             <Vertical label="Vertical textarea:">

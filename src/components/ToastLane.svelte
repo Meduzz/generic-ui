@@ -1,4 +1,14 @@
-<script context="module">
+<script>
+    /**
+     * @typedef {Object} Props
+     * @property {import('svelte').Snippet<[any]>} [children]
+     */
+
+    /** @type {Props} */
+    let { children } = $props();
+</script>
+
+<script module>
     import {writable} from 'svelte/store'
 
     const toasts = writable([])
@@ -25,6 +35,6 @@
 
 <div class="fixed right-0 top-0 h-screen w-48 p-4 flex flex-col-reverse gap-2">
     {#each $toasts as toast}
-        <slot {toast}></slot>
+        {@render children?.({ toast, })}
     {/each}
 </div>

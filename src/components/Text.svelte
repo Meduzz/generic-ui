@@ -1,5 +1,11 @@
 <script>
-    export let text
+    /**
+     * @typedef {Object} Props
+     * @property {string} text
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { text, ...rest } = $props();
 </script>
 
-<div {...$$restProps}>{text}</div>
+<div {...rest}>{text}</div>

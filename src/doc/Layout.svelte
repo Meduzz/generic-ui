@@ -1,5 +1,10 @@
 <script>
-    export let title
+    let { title, children } = $props();
+
+    /*
+     * TODO
+     * - Use title component as title
+     */
 </script>
 
 <svelte:head>
@@ -9,6 +14,6 @@
 <main>
     <h1 class="text-xl font-bold underline">{title}</h1>
     <div>
-        <slot></slot>
+        {@render children()}
     </div>
 </main>

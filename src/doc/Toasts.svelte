@@ -42,12 +42,14 @@
     </Code>
 
     <Example>
-        <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
-                <span>{toast.label}</span>
-                <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
-            </div>
+        <ToastLane >
+            {#snippet children({ toast })}
+             <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
+                    <span>{toast.label}</span>
+                    <button type="button" class="float-right" onclick={() => close(toast)}>x</button>
+                </div>
+            {/snippet}
         </ToastLane>
-        <button type="button" on:click={handle}>Click</button>
+        <button type="button" onclick={handle}>Click</button>
     </Example>
 </Layout>

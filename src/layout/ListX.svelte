@@ -1,17 +1,29 @@
 <script>
-import {twMerge} from 'tailwind-merge'
-import {classHelper} from '../helper'
+    import {twMerge} from 'tailwind-merge'
+    import {classHelper} from '../helper'
 
-export let items = []
+    /**
+     * @typedef {Object} Props
+     * @property {any[]} items
+     * @property {Snippet<any>} [elseSnippet]
+     * @property {Snippet<any>} children
+     */
 
-let defaultClass = 'flex flex-row'
-let {classes, otherProps} = classHelper($$restProps || {class:''})
+    /** @type {Props & { [key: string]: any }} */
+    let { items = [], elseSnippet = defaultElse, children, ...rest } = $props();
+
+    let defaultClass = 'flex flex-row'
+    let {classes, otherProps} = classHelper(rest || {class:''})
 </script>
+
+{#snippet defaultElse()}
+    <div>No items in list.</div>
+{/snippet}
 
 <div class={twMerge(defaultClass, classes)} {...otherProps}>
     {#each items as item}
-    <slot {item}></slot>
+        {@render children({ item, })}
     {:else}
-    <slot></slot>
+        {@render children()}
     {/each}
 </div>

@@ -127,7 +127,7 @@
 		}
 	]
 
-	let sideBarShown = window.outerWidth < 640 ? false : true
+	let sideBarShown = $state(window.outerWidth < 640 ? false : true)
 
 	function toggleSideBar() {
 		sideBarShown = !sideBarShown
@@ -143,10 +143,12 @@
 				{#each groups as group}
 					<div class="py-1">
 						<span class="underline">{group.name}</span>
-						<ListY items={group.components} let:item>
-							<div>
-								<a href="{item.href}">{item.label}</a>
-							</div>
+						<ListY items={group.components} >
+							{#snippet children(item)}
+								<div>
+									<a href="{item.href}">{item.label}</a>
+								</div>
+							{/snippet}
 						</ListY>
 					</div>
 				{/each}
@@ -161,7 +163,7 @@
 				{#each groups as group}
 					{#each group.components as c}
 						<Routable path={c.href}>
-							<svelte:component this={c.component}></svelte:component>
+							<c.component></c.component>
 						</Routable>
 					{/each}
 				{/each}

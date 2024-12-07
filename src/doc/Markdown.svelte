@@ -5,7 +5,7 @@
     import Example from './Example.svelte'
 
     let inMd = `# Hello world\n* **Gief 1**\n* ~~Gief 2~~`
-    let outMd = inMd
+    let outMd = $state(inMd)
 
     let editor = `        <Markdown editing={true} markdown={inMd} on:updated={updated} />`
     let render = `        <Markdown editing={false} markdown={finalMd} />`

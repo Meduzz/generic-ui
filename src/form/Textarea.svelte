@@ -2,11 +2,17 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    export let name
-    export let value
+    /**
+     * @typedef {Object} Props
+     * @property {string} name
+     * @property {any} value
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { name, value = $bindable(), ...rest } = $props();
 
     let defaultClass = 'resize p-1 w-full border-b'
-    let {classes, otherProps} = classHelper($$restProps)
+    let {classes, otherProps} = classHelper(rest)
 </script>
 
-<textarea {name} bind:value={value} on:focus on:blur {...otherProps} class={twMerge(defaultClass, classes)}></textarea>
+<textarea {name} bind:value={value} {...otherProps} class={twMerge(defaultClass, classes)}></textarea>

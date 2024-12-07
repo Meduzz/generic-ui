@@ -1,12 +1,24 @@
 <script>
     import {twMerge} from 'tailwind-merge'
 
-    export let label
-    export let labelClass
-    export let wrapperClass
+    let defaultLabelClass = 'basis-1/4 px-1'
+    let defaultWrapperClass = 'basis-3/4'
 
-    export let defaultLabelClass = 'basis-1/4 px-1'
-    export let defaultWrapperClass = 'basis-3/4'
+    /**
+     * @typedef {Object} Props
+     * @property {string} label
+     * @property {string} labelClass
+     * @property {string} wrapperClass
+     * @property {import('svelte').Snippet} [children]
+     */
+
+    /** @type {Props} */
+    let {
+        label,
+        labelClass,
+        wrapperClass,
+        children
+    } = $props();
 </script>
 
 <div class="flex flex-row py-1">
@@ -14,6 +26,6 @@
         <label>{label}</label>
     </div>
     <div class={twMerge(defaultWrapperClass, wrapperClass)}>
-        <slot></slot>
+        {@render children()}
     </div>
 </div>

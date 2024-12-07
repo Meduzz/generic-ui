@@ -35,8 +35,10 @@
     </Code>
 
     <Example>
-        <ListX {items} let:item>
-            <div class="mr-2">{item}</div>
+        <ListX {items} >
+            {#snippet children({ item })}
+                <div class="mr-2">{item}</div>
+            {/snippet}
         </ListX>
     </Example>
 
@@ -45,8 +47,10 @@
     </Code>
 
     <Example>
-        <ListY class="gap-2" {items} let:item>
-            <div>{item}</div>
+        <ListY class="gap-2" {items} >
+            {#snippet children({ item })}
+                <div>{item}</div>
+            {/snippet}
         </ListY>
     </Example>
 </Layout>

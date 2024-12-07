@@ -2,16 +2,30 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    export let name
-    export let items
-    export let value
+    /**
+     * @typedef {Object} Props
+     * @property {string} name
+     * @property {any[]} items
+     * @property {any} value
+     * @property {string} type
+     * @property {Snippet<any>} children
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let {
+        name,
+        items,
+        value = $bindable(),
+        children,
+        ...rest
+    } = $props();
 
     let defaultClass = 'p-1 w-full'
-    let {classes, otherProps} = classHelper($$restProps)
+    let {classes, otherProps} = classHelper(rest)
 </script>
 
-<select {name} bind:value={value} on:change {...otherProps} class={twMerge(defaultClass, classes)}>
+<select {name} bind:value={value} {...otherProps} class={twMerge(defaultClass, classes)}>
     {#each items as item}
-        <slot {item}></slot>
+        {@render children(item)}
     {/each}
 </select>

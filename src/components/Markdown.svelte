@@ -1,9 +1,7 @@
 <script>
     import {micromark} from 'micromark'
     import {gfm, gfmHtml} from 'micromark-extension-gfm'
-    import {createEventDispatcher} from 'svelte'
 
-    const dispatch = createEventDispatcher()
     const magicTexts = {
         '<br>': '\n',
         '&nbsp;': ' ',
@@ -11,10 +9,21 @@
         '&lt;': '<'
     }
 
-    export let markdown
-    export let editing = false
+    /*
+     * TODO turn into headless component?
+     */
 
-    let text = htmlify(markdown)
+    /**
+     * @typedef {Object} Props
+     * @property {string} markdown
+     * @property {boolean} [editing]
+     * @property {updateHook} [function]
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { markdown, editing = false, updateHook, ...rest } = $props();
+
+    let text = $state(htmlify(markdown))
 
     function render(md) {
         return micromark(md, {
@@ -36,13 +45,15 @@
     }
 
     function updated() {
-        dispatch("updated", unhtmlify(text))
+        if (updateHook) {
+            updateHook(unhtmlify(text))
+        }
     }
 </script>
 
-<div {...$$restProps}>
+<div {...rest}>
     {#if editing}
-    <p contenteditable="true" bind:innerHTML={text} on:keyup={updated}></p>
+    <p contenteditable="true" bind:innerHTML={text} onkeyup={updated}></p>
     {:else}
     {@html render(markdown)}
     {/if}

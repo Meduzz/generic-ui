@@ -2,10 +2,18 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
 
-    let defaultClass = 'border border-slate-400 border-solid shadow-lg p-2'
-    let {classes, otherProps} = classHelper($$restProps)
+    /**
+     * @typedef {Object} Props
+     * @property {import('svelte').Snippet<[any]>} [children]
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { children, ...rest } = $props();
+
+    let defaultClass = 'p-2'
+    let {classes, otherProps} = classHelper(rest)
 </script>
 
 <div class={twMerge(defaultClass, classes)}>
-    <slot {...otherProps}></slot>
+    {@render children({ ...otherProps })}
 </div>

@@ -2,15 +2,34 @@
     import {twMerge} from 'tailwind-merge'
     import {classHelper} from '../helper'
     import {createEventDispatcher} from 'svelte'
-    export let items = []
-    export let brand = null
+
+    /*
+     * TODO
+     * - remove visible (toggle & resize) logic
+     * - make turn menuItems to a vertical list on xs and keep as horizontal list on sm up
+     * - remove all colors and font formatting
+     * - make brand a snippet
+     */
+
+    /**
+     * @typedef {Object} MenuItem
+     * @typedef {string} href
+     * @typedef {string} label
+     * 
+     * @typedef {Object} Props
+     * @property {MenuItem[]} [items]
+     * @property {string} [brand]
+     */
+
+    /** @type {Props & { [key: string]: any }} */
+    let { items = [], brand = null, ...rest } = $props();
 
     const dispatch = createEventDispatcher()
 
-    let visible = true
+    let visible = $state(true)
 
     let defaultClass = 'py-3 px-4 bg-slate-700 text-white font-bold flex flex-row flex-wrap sm:flex-nowrap' 
-    let {classes, otherProps} = classHelper($$restProps)
+    let {classes, otherProps} = classHelper(rest)
     
     function toggle() {
         let old = visible
@@ -43,12 +62,12 @@
     toggle()
     </script>
     
-    <svelte:window on:resize={resize}></svelte:window>
+    <svelte:window onresize={resize}></svelte:window>
     
     <nav class="{twMerge(defaultClass, classes)}">
         <div class="sm:basis-1/2 flex-1">
             <div class="sm:hidden inline text-3xl">
-                <button type="button" on:click={toggle}>&equiv;</button>
+                <button type="button" onclick={toggle}>&equiv;</button>
             </div>
             {#if brand}
             <h1 class="text-2xl inline">{brand}</h1>
