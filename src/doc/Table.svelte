@@ -18,18 +18,24 @@
     ]
 
     let html = `        <Table rows={items} class="bg-pink-200">
-            <tr slot="header">
-                <th>Item</th>
-                <th>Quantity</th>
-            </tr>
-            <tr slot="body" class="odd:bg-slate-300" let:item>
-                <td>{item.item}</td>
-                <td>{item.quantity}</td>
-            </tr>
-            <tr slot="footer">
-                <td>-</td>
-                <td>4</td>
-            </tr>
+            {#snippet header()}
+                <tr >
+                    <th>Item</th>
+                    <th>Quantity</th>
+                </tr>
+            {/snippet}
+            {#snippet body({ item })}
+                <tr  class="odd:bg-slate-300" >
+                    <td>{item.item}</td>
+                    <td>{item.quantity}</td>
+                </tr>
+            {/snippet}
+            {#snippet footer()}
+                <tr >
+                    <td>-</td>
+                    <td>4</td>
+                </tr>
+            {/snippet}
         </Table>
 `
     let js = `        let items = [

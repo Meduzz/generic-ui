@@ -9,11 +9,15 @@
         'Second',
         'Third'
     ]`
-    let htmlx = `        <ListX {items} let:item>
-            <div class="mr-2">{item}</div>
+    let htmlx = `        <ListX {items} >
+            {#snippet children(item)}
+                <div class="mr-2">{item}</div>
+            {/snippet}
         </ListX>`
-    let htmly = `        <ListY class="gap-2" {items} let:item>
-            <div>{item}</div>
+    let htmly = `        <ListY class="gap-2" {items} >
+            {#snippet children(item)}
+                <div>{item}</div>
+            {/snippet}
         </ListY>`
 
     let items = [

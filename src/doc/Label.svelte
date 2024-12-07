@@ -14,31 +14,33 @@
         }
     ]
 
-    let horizontal = `        <Horizontal label="Horizontal text:" labelClass="text-pink-500">
-            <Input type="text" placeholder="Some text..." />
-        </Horizontal>
-        <Horizontal label="Horizontal select:">
-            <Select items={items} let:item>
-                <option value={item.value}>{item.label}</option>
-            </Select>
-        </Horizontal>
-        <Horizontal label="Horizontal textarea:">
-            <Textarea placeholder="I have room for a big chunk of text!11"></Textarea>
-        </Horizontal>`
+    let horizontal = `            <Horizontal label="Horizontal text:" labelClass="text-pink-500">
+                <Input type="text" placeholder="Some text..." />
+            </Horizontal>
+            <Horizontal label="Horizontal select:">
+                <Select items={items}>
+                    {#snippet children(item)}
+                        <option value={item.value}>{item.label}</option>
+                    {/snippet}
+                </Select>
+            </Horizontal>
+            <Horizontal label="Horizontal textarea:">
+                <Textarea placeholder="I have room for a big chunk of text!11"></Textarea>
+            </Horizontal>`
 
-    let vertical = `        <Example>
-            <Vertical label="Vertical text:">
+    let vertical = `            <Vertical label="Vertical text:">
                 <Input type="text" placeholder="Some text..." />
             </Vertical>
             <Vertical label="Vertical select:">
-                <Select items={items} let:item>
-                    <option value={item.value}>{item.label}</option>
+                <Select items={items} >
+                    {#snippet children(item)}
+                        <option value={item.value}>{item.label}</option>
+                    {/snippet}
                 </Select>
             </Vertical>
             <Vertical label="Vertical textarea:">
                 <Textarea placeholder="I have room for a big chunk of text!11"></Textarea>
-            </Vertical>
-        </Example>`
+            </Vertical>`
 </script>
 
 <Layout title="Generic UI - Labels">

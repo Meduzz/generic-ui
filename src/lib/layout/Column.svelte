@@ -10,7 +10,7 @@
     /** @type {Props & { [key: string]: any }} */
     let { children, ...rest } = $props();
 
-    let defaultClass = ''
+    let defaultClass = 'flex-1'
     let {classes, otherProps} = classHelper(rest)
 </script>
 

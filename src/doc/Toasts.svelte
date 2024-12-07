@@ -5,11 +5,13 @@
     import Code from './Code.svelte'
     import Example from './Example.svelte'
 
-    let html = `        <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
-                <span>{toast.label}</span>
-                <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
-            </div>
+    let html = `        <ToastLane >
+            {#snippet children(toast)}
+             <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
+                    <span>{toast.label}</span>
+                    <button type="button" class="float-right" onclick={() => close(toast)}>x</button>
+                </div>
+            {/snippet}
         </ToastLane>`
 
     let js = `

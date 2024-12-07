@@ -16,8 +16,10 @@
             {value:"row3"}
         ]
         let value = "row3"`
-    let html = `        <Select items={items} value={value} name="dropdown" let:item>
-            <option>{item.value}</option>
+    let html = `        <Select onchange={logChange} {items} {value} name="dropdown" class="p-2 caret-orange-500" >
+            {#snippet children(item)}
+                <option>{item.value}</option>
+            {/snippet}
         </Select>`
 
     function logChange() {
