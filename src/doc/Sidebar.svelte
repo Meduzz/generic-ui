@@ -1,6 +1,6 @@
 <script>
-    import { Sidebar } from '../components'
-    import { ListY } from '../layout'
+    import { Sidebar } from '$lib'
+    import { ListY } from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

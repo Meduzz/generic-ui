@@ -1,5 +1,5 @@
 <script>
-    import {Markdown, Columns, Column} from '@chimps/genericui'
+    import {Markdown, Columns, Column} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

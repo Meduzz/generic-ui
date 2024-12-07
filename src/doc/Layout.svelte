@@ -1,10 +1,7 @@
 <script>
-    let { title, children } = $props();
+    import { Header } from "$lib"
 
-    /*
-     * TODO
-     * - Use title component as title
-     */
+    let { title, children } = $props();
 </script>
 
 <svelte:head>
@@ -12,7 +9,7 @@
 </svelte:head>
 
 <main>
-    <h1 class="text-xl font-bold underline">{title}</h1>
+    <Header class="font-bold underline" {title} makePageTitle={true} />
     <div>
         {@render children()}
     </div>

@@ -1,5 +1,5 @@
 <script>
-    import {SubHeader} from '@chimps/genericui'
+    import {SubHeader} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

@@ -1,5 +1,5 @@
 <script>
-    import {RadioGroup} from '@chimps/genericui'
+    import {RadioGroup} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

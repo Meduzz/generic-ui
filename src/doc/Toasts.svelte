@@ -1,6 +1,6 @@
 <script>
     import { fade } from 'svelte/transition'
-    import { ToastLane, addToast, removeToast } from '../components'
+    import { ToastLane, addToast, removeToast } from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'
@@ -26,7 +26,7 @@
     function handle() {
         addToast({
             label:'Test'
-        })
+        }, 2)
     }
 
     function close(it) {
@@ -43,7 +43,7 @@
 
     <Example>
         <ToastLane >
-            {#snippet children({ toast })}
+            {#snippet children(toast)}
              <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
                     <span>{toast.label}</span>
                     <button type="button" class="float-right" onclick={() => close(toast)}>x</button>

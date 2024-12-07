@@ -1,5 +1,5 @@
 <script>
-    import {CheckboxGroup} from '@chimps/genericui'
+    import {CheckboxGroup} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

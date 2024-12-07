@@ -1,5 +1,5 @@
 <script>
-    import {Select} from '@chimps/genericui'
+    import {Select} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'
@@ -37,8 +37,8 @@
     </Code>
 
     <Example>
-        <Select on:change={logChange} items={items} value={value} name="dropdown" class="p-2 caret-orange-500" >
-            {#snippet children({ item })}
+        <Select onchange={logChange} {items} {value} name="dropdown" class="p-2 caret-orange-500" >
+            {#snippet children(item)}
                 <option>{item.value}</option>
             {/snippet}
         </Select>

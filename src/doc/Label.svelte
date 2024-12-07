@@ -1,5 +1,5 @@
 <script>
-    import {Input, Horizontal, Vertical, Select, Textarea} from '../form'
+    import {Input, Horizontal, Vertical, Select, Textarea} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'
@@ -59,7 +59,7 @@
             </Horizontal>
             <Horizontal label="Horizontal select:">
                 <Select items={items}>
-                    {#snippet children({ item })}
+                    {#snippet children(item)}
                         <option value={item.value}>{item.label}</option>
                     {/snippet}
                 </Select>
@@ -83,7 +83,7 @@
             </Vertical>
             <Vertical label="Vertical select:">
                 <Select items={items} >
-                    {#snippet children({ item })}
+                    {#snippet children(item)}
                         <option value={item.value}>{item.label}</option>
                     {/snippet}
                 </Select>

@@ -1,5 +1,5 @@
 <script>
-    import {Table} from '@chimps/genericui'
+    import {Table} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'

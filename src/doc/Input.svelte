@@ -1,5 +1,5 @@
 <script>
-    import {Input} from '@chimps/genericui'
+    import {Input} from '$lib'
     import Layout from './Layout.svelte'
     import Code from './Code.svelte'
     import Example from './Example.svelte'
