@@ -6,7 +6,7 @@
     import Example from './Example.svelte'
 
     let html = `        <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md" transition:fade={{delay: 300, duration: 300}}>
+            <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
                 <span>{toast.label}</span>
                 <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
             </div>
@@ -43,7 +43,7 @@
 
     <Example>
         <ToastLane let:toast>
-            <div class="p-2 border bg-white rounded-md" transition:fade={{delay: 300, duration: 300}}>
+            <div class="p-2 border bg-white rounded-md" transition:fade|global={{delay: 300, duration: 300}}>
                 <span>{toast.label}</span>
                 <button type="button" class="float-right" on:click={() => close(toast)}>x</button>
             </div>

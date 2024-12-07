@@ -1,5 +1,5 @@
 <script>
-	import {ListY, Container, Columns, Column, Rows, Row, Routable, Panel} from './layout'
+	import {ListY, Container, Columns, Column, Panel} from './layout'
 	import {Sidebar, Navbar} from './components'
 	import Start from './doc/Start.svelte'
 	import ColumnsDoc from './doc/Columns.svelte'

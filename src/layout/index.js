@@ -14,7 +14,6 @@ export {
     Column,
     Rows,
     Row,
-    Routable,
     Container,
     ListY,
     ListX
