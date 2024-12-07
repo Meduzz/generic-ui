@@ -22,7 +22,7 @@
 
 <div class={twMerge(defaultClass, classes)} {...otherProps}>
     {#each items as item}
-        {@render children({ item, })}
+        {@render children(item)}
     {:else}
         {@render children()}
     {/each}

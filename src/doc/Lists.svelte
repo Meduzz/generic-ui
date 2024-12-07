@@ -36,7 +36,7 @@
 
     <Example>
         <ListX {items} >
-            {#snippet children({ item })}
+            {#snippet children(item)}
                 <div class="mr-2">{item}</div>
             {/snippet}
         </ListX>
@@ -48,7 +48,7 @@
 
     <Example>
         <ListY class="gap-2" {items} >
-            {#snippet children({ item })}
+            {#snippet children(item)}
                 <div>{item}</div>
             {/snippet}
         </ListY>
