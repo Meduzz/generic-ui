@@ -4,9 +4,9 @@
     import Code from './Code.svelte'
     import Example from './Example.svelte'
 
-    let html = `            <Button label="Click" class="bg-sky-500 text-white" />
-            <Button label="Click" class="bg-pink-500 text-white" />
-            <Button label="Click" class="border border-pink-500 rounded hover:bg-pink-500 hover:text-white" />
+    let html = `        <Button class="hover:underline"><span>Click</span></Button>
+        <Button class="bg-pink-500 text-white">Click</Button>
+        <Button class="border border-pink-500 rounded hover:bg-pink-500 hover:text-white">Click</Button>
 `
 </script>
 
@@ -18,8 +18,8 @@
     </Code>
 
     <Example row={false}>
-        <Button label="Click" class="bg-sky-500 text-white" />
-        <Button label="Click" class="bg-pink-500 text-white" />
-        <Button label="Click" class="border border-pink-500 rounded hover:bg-pink-500 hover:text-white" />
+        <Button class="hover:underline"><span>Click</span></Button>
+        <Button class="bg-pink-500 text-white">Click</Button>
+        <Button class="border border-pink-500 rounded hover:bg-pink-500 hover:text-white">Click</Button>
     </Example>
 </Layout>
