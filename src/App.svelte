@@ -21,8 +21,6 @@
 	import SidebarDoc from './doc/Sidebar.svelte'
 	import Toasts from './doc/Toasts.svelte'
 	import Labels from './doc/Label.svelte'
-    import ListView from './doc/ListView.svelte'
-	import SplitView from './doc/SplitView.svelte'
 
 	let groups = [
 		{
@@ -48,14 +46,6 @@
 					label: 'ListX & ListY',
 					href: '/lists',
 					component: Lists
-				}, {
-					label: 'List view',
-					href: '/listview',
-					component: ListView
-				}, {
-					label: 'Split view',
-					href: '/splitview',
-					component: SplitView
 				}
 			]
 		},{
