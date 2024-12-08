@@ -17,27 +17,26 @@
         }
     ]
 
-    let html = `        <Table rows={items} class="bg-pink-200">
+    let html = `        <Table rows={items}>
             {#snippet header()}
-                <tr >
-                    <th>Item</th>
-                    <th>Quantity</th>
+                <tr class="bg-black text-white text-left">
+                    <th class="px-1">Item</th>
+                    <th class="px-1">Quantity</th>
                 </tr>
             {/snippet}
-            {#snippet body({ item })}
-                <tr  class="odd:bg-slate-300" >
-                    <td>{item.item}</td>
-                    <td>{item.quantity}</td>
+            {#snippet body(item)}
+                <tr class="odd:bg-slate-300" >
+                    <td class="px-1">{item.item}</td>
+                    <td class="px-1">{item.quantity}</td>
                 </tr>
             {/snippet}
             {#snippet footer()}
-                <tr >
-                    <td>-</td>
-                    <td>4</td>
+                <tr class="bg-sky-300">
+                    <td class="px-1">-</td>
+                    <td class="px-1">4</td>
                 </tr>
             {/snippet}
-        </Table>
-`
+        </Table>`
     let js = `        let items = [
             {
                 item:"Butter",
@@ -65,23 +64,23 @@
     </Code>
 
     <Example>
-        <Table rows={items} class="bg-pink-200">
+        <Table rows={items}>
             {#snippet header()}
-                <tr >
-                    <th>Item</th>
-                    <th>Quantity</th>
+                <tr class="bg-black text-white text-left">
+                    <th class="px-1">Item</th>
+                    <th class="px-1">Quantity</th>
                 </tr>
             {/snippet}
-            {#snippet body({ item })}
-                <tr  class="odd:bg-slate-300" >
-                    <td>{item.item}</td>
-                    <td>{item.quantity}</td>
+            {#snippet body(item)}
+                <tr class="odd:bg-slate-300" >
+                    <td class="px-1">{item.item}</td>
+                    <td class="px-1">{item.quantity}</td>
                 </tr>
             {/snippet}
             {#snippet footer()}
-                <tr >
-                    <td>-</td>
-                    <td>4</td>
+                <tr class="bg-sky-300">
+                    <td class="px-1">-</td>
+                    <td class="px-1">4</td>
                 </tr>
             {/snippet}
         </Table>

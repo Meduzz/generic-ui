@@ -30,10 +30,10 @@
 
     <Example>
         <Sidebar>
-            <ListY {items}>
-                {#snippet children(item)}
+            <ListY>
+                {#each items as item}
                     <div>{item}</div>
-                {/snippet}
+                {/each}
             </ListY>
         </Sidebar>
     </Example>

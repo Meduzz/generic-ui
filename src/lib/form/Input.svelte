@@ -4,14 +4,14 @@
 
     /**
      * @typedef {Object} Props
-     * @property {string} name
+     * @property {string} [name]
      * @property {any} value
      * @property {string} type
      */
 
     /** @type {Props & { [key: string]: any }} */
     let {
-        name,
+        name = "input1",
         value = $bindable(),
         type,
         ...rest

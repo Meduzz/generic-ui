@@ -18,10 +18,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Horizontal>
             <Horizontal label="Horizontal select:">
-                <Select items={items}>
-                    {#snippet children(item)}
-                        <option value={item.value}>{item.label}</option>
-                    {/snippet}
+                <Select>
+                    {#each items as item}
+                    <option value={item.value}>{item.label}</option>
+                    {/each}
                 </Select>
             </Horizontal>
             <Horizontal label="Horizontal textarea:">
@@ -32,10 +32,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Vertical>
             <Vertical label="Vertical select:">
-                <Select items={items} >
-                    {#snippet children(item)}
-                        <option value={item.value}>{item.label}</option>
-                    {/snippet}
+                <Select>
+                    {#each items as item}
+                    <option value={item.value}>{item.label}</option>
+                    {/each}
                 </Select>
             </Vertical>
             <Vertical label="Vertical textarea:">
@@ -60,10 +60,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Horizontal>
             <Horizontal label="Horizontal select:">
-                <Select items={items}>
-                    {#snippet children(item)}
-                        <option value={item.value}>{item.label}</option>
-                    {/snippet}
+                <Select>
+                    {#each items as item}
+                    <option value={item.value}>{item.label}</option>
+                    {/each}
                 </Select>
             </Horizontal>
             <Horizontal label="Horizontal textarea:">
@@ -84,10 +84,10 @@
                 <Input type="text" placeholder="Some text..." />
             </Vertical>
             <Vertical label="Vertical select:">
-                <Select items={items} >
-                    {#snippet children(item)}
-                        <option value={item.value}>{item.label}</option>
-                    {/snippet}
+                <Select>
+                    {#each items as item}
+                    <option value={item.value}>{item.label}</option>
+                    {/each}
                 </Select>
             </Vertical>
             <Vertical label="Vertical textarea:">

@@ -100,12 +100,12 @@
             {#each groups as group}
                 <div class="py-1">
                     <span class="underline">{group.name}</span>
-                    <ListY items={group.components} >
-                        {#snippet children(item)}
+                    <ListY>
+                        {#each group.components as item}
                             <div>
                                 <a href="{item.href}">{item.label}</a>
                             </div>
-                        {/snippet}
+                        {/each}
                     </ListY>
                 </div>
             {/each}

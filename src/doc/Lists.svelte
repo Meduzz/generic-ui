@@ -9,15 +9,15 @@
         'Second',
         'Third'
     ]`
-    let htmlx = `        <ListX {items} >
-            {#snippet children(item)}
+    let htmlx = `        <ListX class="gap-2">
+            {#each items as item}
                 <div class="mr-2">{item}</div>
-            {/snippet}
+            {/each}
         </ListX>`
-    let htmly = `        <ListY class="gap-2" {items} >
-            {#snippet children(item)}
+    let htmly = `        <ListY class="gap-2">
+            {#each items as item}
                 <div>{item}</div>
-            {/snippet}
+            {/each}
         </ListY>`
 
     let items = [
@@ -39,10 +39,10 @@
     </Code>
 
     <Example>
-        <ListX {items} >
-            {#snippet children(item)}
+        <ListX class="gap-2">
+            {#each items as item}
                 <div class="mr-2">{item}</div>
-            {/snippet}
+            {/each}
         </ListX>
     </Example>
 
@@ -51,10 +51,10 @@
     </Code>
 
     <Example>
-        <ListY class="gap-2" {items} >
-            {#snippet children(item)}
+        <ListY class="gap-2">
+            {#each items as item}
                 <div>{item}</div>
-            {/snippet}
+            {/each}
         </ListY>
     </Example>
 </Layout>

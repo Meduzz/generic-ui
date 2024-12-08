@@ -16,10 +16,10 @@
             {value:"row3"}
         ]
         let value = "row3"`
-    let html = `        <Select onchange={logChange} {items} {value} name="dropdown" class="p-2 caret-orange-500" >
-            {#snippet children(item)}
-                <option>{item.value}</option>
-            {/snippet}
+    let html = `        <Select onchange={logChange} {value} name="dropdown" class="p-2 caret-orange-500" >
+            {#each items as item}
+            <option>{item.value}</option>
+            {/each}
         </Select>`
 
     function logChange() {
@@ -39,10 +39,10 @@
     </Code>
 
     <Example>
-        <Select onchange={logChange} {items} {value} name="dropdown" class="p-2 caret-orange-500" >
-            {#snippet children(item)}
-                <option>{item.value}</option>
-            {/snippet}
+        <Select onchange={logChange} {value} name="dropdown" class="p-2 caret-orange-500" >
+            {#each items as item}
+            <option>{item.value}</option>
+            {/each}
         </Select>
     </Example>
 </Layout>
