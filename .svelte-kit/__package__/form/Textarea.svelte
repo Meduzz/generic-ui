@@ -4,12 +4,12 @@
 
     /**
      * @typedef {Object} Props
-     * @property {string} name
+     * @property {string} [name]
      * @property {any} value
      */
 
     /** @type {Props & { [key: string]: any }} */
-    let { name, value = $bindable(), ...rest } = $props();
+    let { name = "textarea1", value = $bindable(), ...rest } = $props();
 
     let defaultClass = 'resize p-1 w-full border'
     let {classes, otherProps} = classHelper(rest)

@@ -6,14 +6,14 @@ type Input = {
     }>): void;
 };
 declare const Input: import("svelte").Component<{
-    name: string;
+    name?: string;
     value: any;
     type: string;
 } & {
     [key: string]: any;
 }, {}, "value">;
 type Props = {
-    name: string;
+    name?: string;
     value: any;
     type: string;
 };

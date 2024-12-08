@@ -33,8 +33,8 @@
     }
 </script>
 
-<div class="fixed right-0 top-0 h-screen w-48 p-4 flex flex-col-reverse gap-2">
+<aside class="fixed right-0 top-0 h-screen w-48 p-4 flex flex-col-reverse gap-2">
     {#each $toasts as toast}
         {@render children(toast)}
     {/each}
-</div>
+</aside>

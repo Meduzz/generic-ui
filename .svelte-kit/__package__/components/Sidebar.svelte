@@ -14,6 +14,6 @@
     let {classes, otherProps} = classHelper(rest || {class:''})
 </script>
 
-<div class={twMerge(defaultClass, classes)}>
+<aside class={twMerge(defaultClass, classes)}>
     {@render children({ ...otherProps, })}
-</div>
+</aside>

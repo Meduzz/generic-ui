@@ -6,12 +6,12 @@ type Textarea = {
     }>): void;
 };
 declare const Textarea: import("svelte").Component<{
-    name: string;
+    name?: string;
     value: any;
 } & {
     [key: string]: any;
 }, {}, "value">;
 type Props = {
-    name: string;
+    name?: string;
     value: any;
 };

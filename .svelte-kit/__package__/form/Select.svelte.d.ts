@@ -6,8 +6,7 @@ type Select = {
     }>): void;
 };
 declare const Select: import("svelte").Component<{
-    name: string;
-    items: any[];
+    name?: string;
     value: any;
     type: string;
     children: Snippet<any>;
@@ -15,8 +14,7 @@ declare const Select: import("svelte").Component<{
     [key: string]: any;
 }, {}, "value">;
 type Props = {
-    name: string;
-    items: any[];
+    name?: string;
     value: any;
     type: string;
     children: Snippet<any>;

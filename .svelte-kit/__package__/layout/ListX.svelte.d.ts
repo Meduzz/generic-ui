@@ -6,14 +6,10 @@ type ListX = {
     }>): void;
 };
 declare const ListX: import("svelte").Component<{
-    items: any[];
-    elseSnippet?: Snippet<any>;
     children: Snippet<any>;
 } & {
     [key: string]: any;
 }, {}, "">;
 type Props = {
-    items: any[];
-    elseSnippet?: Snippet<any>;
     children: Snippet<any>;
 };

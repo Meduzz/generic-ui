@@ -37,13 +37,13 @@
     </div>
     {#if showItems}
     <div class="sm:basis-1/2 sm:my-auto basis-full">
-        <div class="sm:float-right divide-y sm:divide-x sm:divide-y-0 flex flex-col sm:flex-row">
+        <menu class="sm:float-right divide-y sm:divide-x sm:divide-y-0 flex flex-col sm:flex-row">
             {#each items as item}
-                <div class="basis-full sm:px-2 sm:flex-1">
+                <li class="basis-full sm:px-2 sm:flex-1">
                     <a href="{item.href}">{item.label}</a>
-                </div>
+                </li>
             {/each}
-        </div>
+        </menu>
     </div>
     {/if}
 </nav>

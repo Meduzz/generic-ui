@@ -4,26 +4,16 @@
 
     /**
      * @typedef {Object} Props
-     * @property {any[]} items
-     * @property {Snippet<any>} [elseSnippet]
      * @property {Snippet<any>} children
      */
 
     /** @type {Props & { [key: string]: any }} */
-    let { items = [], elseSnippet = defaultElse, children, ...rest } = $props();
+    let { children, ...rest } = $props();
 
     let defaultClass = 'flex flex-row'
     let {classes, otherProps} = classHelper(rest || {class:''})
 </script>
 
-{#snippet defaultElse()}
-    <div>No items in list.</div>
-{/snippet}
-
 <div class={twMerge(defaultClass, classes)} {...otherProps}>
-    {#each items as item}
-        {@render children(item)}
-    {:else}
-        {@render children()}
-    {/each}
+    {@render children()}
 </div>

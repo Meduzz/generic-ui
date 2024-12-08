@@ -15,5 +15,5 @@
 </script>
 
 <div class={twMerge(defaultClass, classes)}>
-    {@render children({ ...otherProps })}
+    {@render children()}
 </div>

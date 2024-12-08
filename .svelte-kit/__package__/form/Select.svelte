@@ -4,8 +4,7 @@
 
     /**
      * @typedef {Object} Props
-     * @property {string} name
-     * @property {any[]} items
+     * @property {string} [name]
      * @property {any} value
      * @property {string} type
      * @property {Snippet<any>} children
@@ -13,8 +12,7 @@
 
     /** @type {Props & { [key: string]: any }} */
     let {
-        name,
-        items,
+        name = "select1",
         value = $bindable(),
         children,
         ...rest
@@ -25,7 +23,5 @@
 </script>
 
 <select {name} bind:value={value} {...otherProps} class={twMerge(defaultClass, classes)}>
-    {#each items as item}
-        {@render children(item)}
-    {/each}
+    {@render children()}
 </select>

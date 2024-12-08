@@ -2,6 +2,12 @@
     import { twMerge } from 'tailwind-merge'
     import {classHelper} from '../helper'
 
+    /*
+     * TODO
+     * - Get this component backed by a headless table
+     * - Also accept columns list and make something smarter with thead, tbody & tfoot?
+     */
+
     /**
      * @typedef {Object} Props
      * @property {any[]} rows
@@ -19,7 +25,7 @@
         ...rest
     } = $props();
 
-    let defaultClass = ''
+    let defaultClass = 'border'
     let {classes, otherProps} = classHelper(rest)
 </script>
 
