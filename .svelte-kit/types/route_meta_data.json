@@ -3,7 +3,6 @@
 	"/buttons": [],
 	"/checkboxgroup": [],
 	"/columns": [],
-	"/header": [],
 	"/inputs": [],
 	"/labels": [],
 	"/lists": [],
@@ -13,9 +12,7 @@
 	"/rows": [],
 	"/select": [],
 	"/sidebar": [],
-	"/subheader": [],
 	"/tables": [],
 	"/textarea": [],
-	"/text": [],
 	"/toasts": []
 }

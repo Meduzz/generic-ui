@@ -18,10 +18,7 @@ export const nodes = [
 	() => import('./nodes/14'),
 	() => import('./nodes/15'),
 	() => import('./nodes/16'),
-	() => import('./nodes/17'),
-	() => import('./nodes/18'),
-	() => import('./nodes/19'),
-	() => import('./nodes/20')
+	() => import('./nodes/17')
 ];
 
 export const server_loads = [];
@@ -31,21 +28,18 @@ export const dictionary = {
 		"/buttons": [3],
 		"/checkboxgroup": [4],
 		"/columns": [5],
-		"/header": [6],
-		"/inputs": [7],
-		"/labels": [8],
-		"/lists": [9],
-		"/markdown": [10],
-		"/panels": [11],
-		"/radiogroup": [12],
-		"/rows": [13],
-		"/select": [14],
-		"/sidebar": [15],
-		"/subheader": [16],
-		"/tables": [17],
-		"/textarea": [19],
-		"/text": [18],
-		"/toasts": [20]
+		"/inputs": [6],
+		"/labels": [7],
+		"/lists": [8],
+		"/markdown": [9],
+		"/panels": [10],
+		"/radiogroup": [11],
+		"/rows": [12],
+		"/select": [13],
+		"/sidebar": [14],
+		"/tables": [15],
+		"/textarea": [16],
+		"/toasts": [17]
 	};
 
 export const hooks = {

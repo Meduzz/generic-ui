@@ -1,6 +1,4 @@
 <script>
-    import { Header } from "$lib"
-
     let { title, children } = $props();
 </script>
 
@@ -9,7 +7,7 @@
 </svelte:head>
 
 <main>
-    <Header class="font-bold underline" {title} makePageTitle={true} />
+    <h1 class="text-2xl font-bold underline">{title}</h1>
     <div>
         {@render children()}
     </div>

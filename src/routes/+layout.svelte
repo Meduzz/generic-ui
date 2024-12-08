@@ -29,17 +29,8 @@
 					label: 'Button',
 					href: '/buttons',
 				}, {
-					label: 'Header',
-					href: '/header',
-				}, {
-					label: 'Sub header',
-					href: '/subheader',
-				}, {
 					label: 'Table',
 					href: '/tables',
-				}, {
-					label: 'Text',
-					href: '/text',
 				}, {
 					label: 'Markdown',
 					href: '/markdown',
