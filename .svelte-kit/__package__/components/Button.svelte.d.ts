@@ -4,10 +4,10 @@ type Button = {
     $set?(props: Partial<$$ComponentProps>): void;
 };
 declare const Button: import("svelte").Component<{
-    label: any;
     onclick: any;
+    children: any;
 } & Record<string, any>, {}, "">;
 type $$ComponentProps = {
-    label: any;
     onclick: any;
+    children: any;
 } & Record<string, any>;

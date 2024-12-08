@@ -10,7 +10,7 @@
     /** @type {Props & { [key: string]: any }} */
     let { children, ...rest } = $props();
 
-    let defaultClass = 'p-2'
+    let defaultClass = 'p-2 border'
     let {classes, otherProps} = classHelper(rest)
 </script>
 

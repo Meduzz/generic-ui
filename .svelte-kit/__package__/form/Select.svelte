@@ -20,7 +20,7 @@
         ...rest
     } = $props();
 
-    let defaultClass = 'p-1 w-full'
+    let defaultClass = 'p-1 w-full bg-white border'
     let {classes, otherProps} = classHelper(rest)
 </script>
 

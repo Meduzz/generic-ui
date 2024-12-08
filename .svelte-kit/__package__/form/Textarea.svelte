@@ -11,7 +11,7 @@
     /** @type {Props & { [key: string]: any }} */
     let { name, value = $bindable(), ...rest } = $props();
 
-    let defaultClass = 'resize p-1 w-full border-b'
+    let defaultClass = 'resize p-1 w-full border'
     let {classes, otherProps} = classHelper(rest)
 </script>
 
