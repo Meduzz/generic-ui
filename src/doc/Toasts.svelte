@@ -37,7 +37,7 @@
 </script>
 
 <Layout title="Generic UI - Toasts">
-    <p>Asdf</p>
+    <p>Toastlane adds a lane to the right of the page and provides a few methods to add/remove toasts to/from that lane.</p>
 
     <Code language="html">
         <pre>{html}</pre>

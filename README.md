@@ -1,3 +1,5 @@
 # Generic UI
 
-A bunch of generic/utility svelte components. Styled with tailwind. Instead of adding 300 more or less usable attributes. I tried to use `{...$$restProps}` in the best way. That should allow you (and me) to bind to/set/tweak any attribute needed, as well as overriding the class attribute.
+A bunch of generic/utility bare minimum styled svelte components. Styling is done with Tailwind. And most components allow you to change them pretty drastically (uI-wise), ie with tailwind.
+
+Think of the components as a base for your project, to get you up and running a little bit faster.
